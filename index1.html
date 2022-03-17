@@ -1,13 +1,14 @@
 <html>
     <body  style="background-image: url(./1.png);background-size:755px 1334px;background-repeat:no-repeat;background-size: cover;">
-    <div id="times" style="font-size: 18px;color:#063F8D;position:absolute;top: 237px;left: 150px;font-family: -apple-system-body;"></div>
+    <div id="times" style="font-size: 16px;color:#063F8D;position:absolute;top: 242px;left: 152px;font-family: -apple-system-body;"></div>
+    <div style="z-index:111;position:absolute;top:400px;height:300px;width:100%" onclick="to2()"></div>
     </body>
 </html>
 <script type="text/javascript">
-    window.onclick = function(event) {
-        window.location.href = "./index2.html";
+    function to2() {
+        window.location.href = './index2.html'
     }
-    function  getD1(){
+    function getD1(){
         var date=new Date();
         var d1=date.toLocaleString('zh-CN', { hour12: false,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit"});
         d1= d1.replaceAll('/','-');
