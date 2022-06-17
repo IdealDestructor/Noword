@@ -9,7 +9,11 @@
     function  getD1(){
         var date=new Date();
         var d1=date.toLocaleString('zh-CN', { hour12: false,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit"});
-        d1= d1.replaceAll('/','-');
+        //d1= d1.replaceAll('/','-');
+        var arr=d1.split("/")
+        d1=arr[0]+"年"+arr[1]+"月"+arr[2]
+        arr=d1.split(" ")
+        d1 =arr[0]+"日 "+arr[1]
         var div1=document.getElementById("times");
         div1.innerHTML =d1;
 
