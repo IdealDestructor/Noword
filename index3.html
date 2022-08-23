@@ -1,0 +1,22 @@
+<html>
+    <body  style="background-image: url(./1.png);background-size:755px 1334px;background-repeat:no-repeat;background-size: cover;">
+    <div id="times" style="font-size: 2.5rem;color: #063F8D;position: absolute;top: 598px;left: 395px;font-family: -apple-system-body;"></div>
+    <div style="position:absolute;top:800px;height:1000px;width:100%" onclick="to2()"></div>
+    </body>
+</html>
+<script type="text/javascript">
+    function to2() {
+        window.location.href = './index4.html'
+    }
+    function getD1(){
+        var date=new Date();
+        var d1=date.toLocaleString('zh-CN', { hour12: false,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit"});
+        d1= d1.replaceAll('/','-');
+        var div1=document.getElementById("times");
+        div1.innerHTML =d1;
+
+    }
+
+    setInterval("getD1();",1000);
+
+</script>

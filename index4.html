@@ -1,0 +1,24 @@
+<html>
+    <body  style="background-image: url(./3.jpg);background-size:755px 1334px;background-repeat:no-repeat;background-size: cover;">
+    <div id="times" style="font-size:2.5rem;color:#49CF6B;position:absolute;top:425px;left:270px;font-weight:normal;font-family: ui-monospace;"></div>
+    <div style="position:absolute;top:570px;left:300px;"><img style="width:380px;height:auto" src="./green_bg.gif"></div>
+    <div style="position:absolute;top:800px;height:1000px;width:100%"></div>
+    </body>
+</html>
+<script type="text/javascript">
+    function  getD1(){
+        var date=new Date();
+        var d1=date.toLocaleString('zh-CN', { hour12: false,year:"numeric",month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit",second:"2-digit"});
+        //d1= d1.replaceAll('/','-');
+        var arr=d1.split("/")
+        d1=arr[0]+"年"+arr[1]+"月"+arr[2]
+        arr=d1.split(" ")
+        d1 =arr[0]+"日 "+arr[1]
+        var div1=document.getElementById("times");
+        div1.innerHTML =d1;
+
+    }
+
+    setInterval("getD1();",1000);
+
+</script>
