@@ -1,6 +1,6 @@
 <html>
     <head><title>网上办事大厅-校园卡</title></head>
-    <body  style="background-image: url(./IMG_6876-2.png);background-size:755px 1334px;background-repeat:no-repeat;background-size: cover;">
+    <body  onclick="to2()" style="background-image: url(./IMG_6876-2.png);background-size:755px 1334px;background-repeat:no-repeat;background-size: cover;">
     <div id="times" style="font-size:2.5rem;color:#49CF6B;position:absolute;top:456px;left:240px;font-weight:normal;font-family: ui-monospace;"></div>
     <div style="position:absolute;top:630px;left:300px;"><img style="width:380px;height:auto" src="./green_bg.gif"></div>
     <div style="position:absolute;top:800px;height:1000px;width:100%"></div>
@@ -19,7 +19,9 @@
         div1.innerHTML =d1;
 
     }
-
+    function to2() {
+        window.location.href = './index2.html'
+    }
     setInterval("getD1();",1000);
 
 </script>
