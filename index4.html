@@ -35,30 +35,39 @@
             div.style.color = "#606266";
             div.style.position = " fixed";
             div.style.zIndex = 1999;
-            div.style.height = " 60px";
+            div.style.height = "250px";
             div.style.top = top;
             div.style.left = "50%";
-            div.style.lineHeight = "30px";
-            div.style.height = " 100px";
+            div.style.lineHeight = "50px";
             div.style.borderRadius = " 4px";
-            div.style.fontSize = " 14px";
-            div.style.textAlign = "center";
-            div.style.padding = "0 10px";
-            div.style.width = " 300px";
+            div.style.fontSize = "32px";
+            div.style.textAlign = "left";
+            div.style.padding = "25px 30px 5px 30px";
+            div.style.width = " 600px";
             div.style.wordBreak = "break-all";
             div.className = "animated  bounceInDown";
             div.id = "alert";
             div.innerHTML = "<p>"+text+"</p>";
             var button= doc.createElement("button")
             button.style.backgroundColor  ="#024889"
-            button.style.height="30px";
-            button.style.width="60px";
-            button.style.fontSize = " 14px";
+            button.style.height="60px";
+            button.style.width="100px";
+            button.style.fontSize = " 30px";
             button.style.borderRadius="4px";
             button.style.color = "#fff";
             button.style.border="none";
-            button.style.marginLeft = "200px"
+            button.style.marginLeft = "500px"
             button.innerHTML = "确定";
+            button.onclick = function(e) {
+               
+            
+        //阻止事件冒泡[兼容处理]
+        if(e.stopPropagation){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble=true;
+        } body.removeChild(div0);
+            }
             div.appendChild(button);
             div0.appendChild(div);
             body.appendChild(div0);
