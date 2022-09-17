@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自定义alert</title>
+    <style type="text/css">
+    html,
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    /*     //防止鼠标双击选中文字
+     */
+
+    div {
+
+        -khtml-user-select: none;
+        /*早期浏览器*/
+        user-select: none;
+    }
+    /*  //来自animated.css的样式 */
+
+    .animated {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+
+    @keyframes bounceInDown {
+        from,
+        60%,
+        75%,
+        90%,
+        to {
+            animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+
+        0% {
+            opacity: 0;
+            transform: translate3d(0, -3000px, 0);
+        }
+
+        60% {
+            opacity: 1;
+            transform: translate3d(0, 25px, 0);
+        }
+
+        75% {
+            transform: translate3d(0, -10px, 0);
+        }
+
+        90% {
+            transform: translate3d(0, 5px, 0);
+        }
+
+        to {
+            transform: none;
+        }
+    }
+
+    .bounceInDown {
+        animation-name: bounceInDown;
+    }
+
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+    (function(win,doc) {
+        var alert = function(text, time, top) {
+            text = "提醒您再次核实，核酸检测结果是否已超3天",top = top || "10%";//增加默认值，增强健壮性
+            var body=doc.getElementsByTagName("body")[0];//优化dom
+            //实现alert
+            var div0 = doc.createElement("div");
+            div0.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000;";
+            var div = doc.createElement("div");
+            div.style.backgroundColor = "#fff";
+            div.style.color = "#606266";
+            div.style.position = " fixed";
+            div.style.zIndex = 1999;
+            div.style.height = " 60px";
+            div.style.top = top;
+            div.style.left = "50%";
+            div.style.lineHeight = "30px";
+            div.style.height = " 100px";
+            div.style.borderRadius = " 4px";
+            div.style.fontSize = " 14px";
+            div.style.textAlign = "center";
+            div.style.padding = "0 10px";
+            div.style.width = " 300px";
+            div.style.wordBreak = "break-all";
+            div.className = "animated  bounceInDown";
+            div.id = "alert";
+            div.innerHTML = "<p>"+text+"</p>";
+            var button= doc.createElement("button")
+            button.style.backgroundColor  ="#024889"
+            button.style.height="30px";
+            button.style.width="60px";
+            button.style.fontSize = " 14px";
+            button.style.borderRadius="4px";
+            button.style.color = "#fff";
+            button.style.border="none";
+            button.style.marginLeft = "200px"
+            button.innerHTML = "确定";
+            div.appendChild(button);
+            div0.appendChild(div);
+            body.appendChild(div0);
+            var selfObj = doc.getElementById("alert");
+            //动态调整位置
+            var alertWidth = win.getComputedStyle(selfObj, null).width;
+            div.style.marginLeft = -parseInt(alertWidth) / 2 + "px";
+            
+        }
+        win.alert=alert;//导出
+    })(window,document);
+    alert();
+    </script>
+</body>
+
+</html>
