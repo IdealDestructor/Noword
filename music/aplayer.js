@@ -45,7 +45,7 @@ const ap = new APlayer({
             name: '95 at Night',
             artist: 'Fiji Blue',
             url: 'https://oss.deqiang.wang/music/95atnight.m4a',
-            cover: 'https://oss.deqiang.wang/music/inthisrome.jpg',
+            cover: 'https://oss.deqiang.wang/music/inthisroom.png',
             lrc: 'https://oss.deqiang.wang/music/95atnight.lrc'
         },
         {
