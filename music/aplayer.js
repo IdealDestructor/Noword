@@ -14,8 +14,8 @@ const ap = new APlayer({
             lrc: 'https://oss.deqiang.wang/music/lasttrain.lrc'
         },
         {
-            name: 'I Really Want to Stay At Your House.mp3',
-            artist: 'Rosa Walton/Hallie Coggins',
+            name: 'I Really Want to Stay At Your House',
+            artist: 'Rosa Walton',
             url: 'https://oss.deqiang.wang/music/IReallyWanttoStayAtYourHouse.mp3',
             cover: 'https://oss.deqiang.wang/music/IReallyWanttoStayAtYourHouse.jpg',
             lrc: 'https://oss.deqiang.wang/music/IReallyWanttoStayAtYourHouse.lrc'
